@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --root-font-family: "Pixelify Sans", sans-serif;
+
+  --bg-color: #232323;
+  --btn-bg-color: #70be44;
+  --btn-text-color: #232323;
+  --cta-btn-bg-color: #ffffff;
+  --cta-btn-text-color: #232323;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--root-font-family);
+  background-color: var(--bg-color);
+  background-image: url(./assets/bg.svg);
+}
+
+.container {
+  min-height: 100vh;
+  width: min(360px, 100%);
+  padding: 0 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.container > * {
+  margin-bottom: 24px;
+}
+
+.btns-wrapper {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.btns-wrapper > * {
+  margin-bottom: 16px;
+}
+
+.pixel {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--btn-text-color);
+  background: var(--btn-bg-color);
+  height: auto;
+  margin: 10px;
+  position: relative;
+  display: block;
+  text-align: center;
+  user-select: none;
+
+  padding: 8px 16px;
+  z-index: 2;
+}
+
+.pixel:active {
+  top: 2px;
+}
+
+.pixel::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -10px;
+  right: -10px;
+  background: var(--btn-bg-color);
+  z-index: -1;
+}
+
+.pixel::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: -6px;
+  right: -6px;
+  background: var(--btn-bg-color);
+  z-index: -1;
+}
+
+.pixel > .icon {
+  width: 24px;
+  fill: var(--cta-btn-text-color);
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translate(0, -50%);
+}
+
+.cta {
+  --btn-bg-color: var(--cta-btn-bg-color);
+  --btn-text-color: var(--cta-btn-text-color);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 320px;
+  margin: 0;
+  margin-top: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: var(--btn-bg-color);
+}
+
+footer > a {
+  color: var(--cta-btn-bg-color);
+}
+
+.title-box {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--cta-btn-bg-color);
+  text-align: center;
+}
+
+.title-box .name {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.title-box .desc {
+  font-size: 18px;
+}
+
+.green {
+  color: var(--btn-bg-color);
+}
